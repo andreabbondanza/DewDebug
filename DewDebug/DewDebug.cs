@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using DewCore.RestClient;
+using System.Diagnostics;
 
 namespace DewCore
 {
@@ -91,7 +92,7 @@ namespace DewCore
         /// <param name="text"></param>
         public void Write(string text)
         {
-            System.Diagnostics.Debug.Write(text);
+            Debug.Write(text);
         }
         /// <summary>
         /// Write formatted text
@@ -100,8 +101,7 @@ namespace DewCore
         /// <param name="args"></param>
         public void Write(string text, object[] args)
         {
-
-            System.Diagnostics.Debug.Write(String.Format(text, args));
+            Debug.Write(String.Format(text, args));
         }
         /// <summary>
         /// Write text and new line
@@ -109,7 +109,7 @@ namespace DewCore
         /// <param name="text"></param>
         public void WriteLine(string text)
         {
-            System.Diagnostics.Debug.WriteLine(text);
+            Debug.WriteLine(text);
         }
         /// <summary>
         /// Write formatted text and new line
@@ -118,7 +118,7 @@ namespace DewCore
         /// <param name="args"></param>
         public void WriteLine(string text, object[] args)
         {
-            System.Diagnostics.Debug.Write(String.Format(text, args));
+            Debug.Write(String.Format(text, args));
         }
     }
 
