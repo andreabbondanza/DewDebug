@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net.Http;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using DewCore.RestClient;
 
 namespace DewCore
@@ -170,7 +171,7 @@ namespace DewCore
         /// <param name="args"></param>
         public void WriteLine(string text, object[] args)
         {
-            System.IO.File.AppendAllLines(this.Path, new List<string>() { String.Format(text, args) } );
+            System.IO.File.AppendAllLines(this.Path, new List<string>() { String.Format(text, args) });
         }
     }
     /// <summary>
@@ -201,7 +202,7 @@ namespace DewCore
             request.SetMethod(Method.POST);
             request.SetUrl(this.Url);
             request.AddQueryArgs("type", "single");
-            var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" +text+@""" }"));
+            var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + text + @""" }"));
             request.AddContent(stringContent);
             RESTClient client = new RESTClient();
             using (RESTResponse response = (RESTResponse)client.PerformRequest(request).Result)
@@ -221,7 +222,7 @@ namespace DewCore
             request.SetMethod(Method.POST);
             request.SetUrl(this.Url);
             request.AddQueryArgs("type", "single");
-            var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" +  String.Format(text, args) + @""" }"));
+            var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + String.Format(text, args) + @""" }"));
             request.AddContent(stringContent);
             RESTClient client = new RESTClient();
             using (RESTResponse response = (RESTResponse)client.PerformRequest(request).Result)
@@ -264,6 +265,84 @@ namespace DewCore
             request.AddContent(stringContent);
             RESTClient client = new RESTClient();
             using (RESTResponse response = (RESTResponse)client.PerformRequest(request).Result)
+            {
+                if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
+                    throw new InvalidOperationException();
+            }
+        }
+        /// <summary>
+        /// Send text to server
+        /// </summary>
+        /// <param name="text"></param>
+        public async Task WriteAsync(string text)
+        {
+            RESTRequest request = new RESTRequest();
+            request.SetMethod(Method.POST);
+            request.SetUrl(this.Url);
+            request.AddQueryArgs("type", "single");
+            var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + text + @""" }"));
+            request.AddContent(stringContent);
+            RESTClient client = new RESTClient();
+            using (RESTResponse response = (RESTResponse)await client.PerformRequest(request))
+            {
+                if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
+                    throw new InvalidOperationException();
+            }
+        }
+        /// <summary>
+        /// Send formatted text to server
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="args"></param>
+        public async Task WriteAsync(string text, object[] args)
+        {
+            RESTRequest request = new RESTRequest();
+            request.SetMethod(Method.POST);
+            request.SetUrl(this.Url);
+            request.AddQueryArgs("type", "single");
+            var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + String.Format(text, args) + @""" }"));
+            request.AddContent(stringContent);
+            RESTClient client = new RESTClient();
+            using (RESTResponse response = (RESTResponse)await client.PerformRequest(request))
+            {
+                if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
+                    throw new InvalidOperationException();
+            }
+        }
+        /// <summary>
+        /// Send text to server
+        /// </summary>
+        /// <param name="text"></param>
+        public async Task WriteLineAsync(string text)
+        {
+            RESTRequest request = new RESTRequest();
+            request.SetMethod(Method.POST);
+            request.SetUrl(this.Url);
+            request.AddQueryArgs("type", "multiline");
+            var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + text + @""" }"));
+            request.AddContent(stringContent);
+            RESTClient client = new RESTClient();
+            using (RESTResponse response = (RESTResponse)await client.PerformRequest(request))
+            {
+                if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
+                    throw new InvalidOperationException();
+            }
+        }
+        /// <summary>
+        /// Write formatted text and new line
+        /// </summary>
+        /// <param name="text"></param>
+        /// <param name="args"></param>
+        public async Task WriteLineAsync(string text, object[] args)
+        {
+            RESTRequest request = new RESTRequest();
+            request.SetMethod(Method.POST);
+            request.SetUrl(this.Url);
+            request.AddQueryArgs("type", "multiline");
+            var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + String.Format(text, args) + @""" }"));
+            request.AddContent(stringContent);
+            RESTClient client = new RESTClient();
+            using (RESTResponse response = (RESTResponse)await client.PerformRequest(request))
             {
                 if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
                     throw new InvalidOperationException();
