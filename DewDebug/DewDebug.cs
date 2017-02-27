@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using DewCore.RestClient;
 
 namespace DewCore
@@ -195,7 +197,18 @@ namespace DewCore
         /// <param name="text"></param>
         public void Write(string text)
         {
-            
+            RESTRequest request = new RESTRequest();
+            request.SetMethod(Method.POST);
+            request.SetUrl(this.Url);
+            request.AddQueryArgs("type", "single");
+            var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" +text+@""" }"));
+            request.AddContent(stringContent);
+            RESTClient client = new RESTClient();
+            using (RESTResponse response = (RESTResponse)client.PerformRequest(request).Result)
+            {
+                if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
+                    throw new InvalidOperationException();
+            }
         }
         /// <summary>
         /// Send formatted text to server
@@ -204,7 +217,18 @@ namespace DewCore
         /// <param name="args"></param>
         public void Write(string text, object[] args)
         {
-            
+            RESTRequest request = new RESTRequest();
+            request.SetMethod(Method.POST);
+            request.SetUrl(this.Url);
+            request.AddQueryArgs("type", "single");
+            var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" +  String.Format(text, args) + @""" }"));
+            request.AddContent(stringContent);
+            RESTClient client = new RESTClient();
+            using (RESTResponse response = (RESTResponse)client.PerformRequest(request).Result)
+            {
+                if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
+                    throw new InvalidOperationException();
+            }
         }
         /// <summary>
         /// Send text to server
@@ -212,7 +236,18 @@ namespace DewCore
         /// <param name="text"></param>
         public void WriteLine(string text)
         {
-            
+            RESTRequest request = new RESTRequest();
+            request.SetMethod(Method.POST);
+            request.SetUrl(this.Url);
+            request.AddQueryArgs("type", "multiline");
+            var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + text + @""" }"));
+            request.AddContent(stringContent);
+            RESTClient client = new RESTClient();
+            using (RESTResponse response = (RESTResponse)client.PerformRequest(request).Result)
+            {
+                if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
+                    throw new InvalidOperationException();
+            }
         }
         /// <summary>
         /// Write formatted text and new line
@@ -221,7 +256,18 @@ namespace DewCore
         /// <param name="args"></param>
         public void WriteLine(string text, object[] args)
         {
-            
+            RESTRequest request = new RESTRequest();
+            request.SetMethod(Method.POST);
+            request.SetUrl(this.Url);
+            request.AddQueryArgs("type", "multiline");
+            var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + String.Format(text, args) + @""" }"));
+            request.AddContent(stringContent);
+            RESTClient client = new RESTClient();
+            using (RESTResponse response = (RESTResponse)client.PerformRequest(request).Result)
+            {
+                if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
+                    throw new InvalidOperationException();
+            }
         }
     }
 }
