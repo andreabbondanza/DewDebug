@@ -250,3 +250,9 @@ paket-files/
 # JetBrains Rider
 .idea/
 *.sln.iml
+/DewLogger.deps.json
+/DewLogger.dll
+/DewLogger.xml
+/DewLogger.xml
+/DewLogger.dll
+/DewLogger.xml
