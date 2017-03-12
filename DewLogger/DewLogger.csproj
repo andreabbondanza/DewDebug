@@ -21,7 +21,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="dewrestclientstandard"  />
+    <PackageReference Include="DewRestClient"  />
   </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="$(ProjectPath)" Properties="Configuration=Release;Platform=Any CPU" />
