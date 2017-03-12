@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26228.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DewLogger", "DewLogger.csproj", "{10158E8C-8EDD-4552-9CAC-473FA0F35689}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DewLogger", "DewLogger\DewLogger.csproj", "{7F2ABECD-1DE4-4B2C-A9C1-EABD51959871}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{10158E8C-8EDD-4552-9CAC-473FA0F35689}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10158E8C-8EDD-4552-9CAC-473FA0F35689}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10158E8C-8EDD-4552-9CAC-473FA0F35689}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10158E8C-8EDD-4552-9CAC-473FA0F35689}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F2ABECD-1DE4-4B2C-A9C1-EABD51959871}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F2ABECD-1DE4-4B2C-A9C1-EABD51959871}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F2ABECD-1DE4-4B2C-A9C1-EABD51959871}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F2ABECD-1DE4-4B2C-A9C1-EABD51959871}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
