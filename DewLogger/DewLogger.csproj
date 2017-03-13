@@ -12,7 +12,7 @@
     <Product>Dew Logger</Product>
     <Company>Dew Studio</Company>
     <Authors>Andrea Vincenzo Abbondanza</Authors>
-    <Version>1.0.4</Version>
+    <Version>1.0.6</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
