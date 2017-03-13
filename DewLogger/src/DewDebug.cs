@@ -2,7 +2,7 @@
 using System;
 using System.Diagnostics;
 
-namespace DewLogger
+namespace DewCore.DewLogger
 {
     /// <summary>
     /// Log into debug output

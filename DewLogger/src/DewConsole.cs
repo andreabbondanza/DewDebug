@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DewCore
+namespace DewCore.DewLogger
 {
     /// <summary>
     /// Log into the console

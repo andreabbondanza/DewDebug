@@ -2,7 +2,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace DewLogger
+namespace DewCore.DewLogger
 {
     /// <summary>
     /// Log into a file

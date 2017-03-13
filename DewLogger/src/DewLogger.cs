@@ -1,4 +1,4 @@
-﻿namespace DewCore
+﻿namespace DewCore.DewLogger
 {
     /// <summary>
     /// Debug interface
