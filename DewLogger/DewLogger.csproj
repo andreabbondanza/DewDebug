@@ -23,6 +23,6 @@
     <MSBuild Projects="$(ProjectPath)" Properties="Configuration=Release;Platform=Any CPU" />
   </Target>
   <ItemGroup>
-    <PackageReference Include="DewRestClient" Version="1.0.9" />
+    <PackageReference Include="DewRestClient"  />
   </ItemGroup>
 </Project>
