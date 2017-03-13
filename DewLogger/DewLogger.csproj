@@ -12,18 +12,17 @@
     <Product>Dew Logger</Product>
     <Company>Dew Studio</Company>
     <Authors>Andrea Vincenzo Abbondanza</Authors>
-    <Version>1.0.2</Version>
+    <Version>1.0.3</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <DocumentationFile>bin\Release\netstandard1.3\DewLogger.xml</DocumentationFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="DewRestClient"  />
-  </ItemGroup>
   <Target Name="Build">
     <MSBuild Projects="$(ProjectPath)" Properties="Configuration=Release;Platform=Any CPU" />
   </Target>
+  <ItemGroup>
+    <PackageReference Include="DewRestClient" Version="1.0.9" />
+  </ItemGroup>
 </Project>
