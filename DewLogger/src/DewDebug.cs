@@ -1,4 +1,5 @@
 ﻿using DewCore;
+using DewInterfaces.DewLogger;
 using System;
 using System.Diagnostics;
 

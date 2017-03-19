@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DewInterfaces.DewLogger;
+using System;
 
 namespace DewCore.DewLogger
 {
