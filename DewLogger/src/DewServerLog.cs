@@ -1,4 +1,4 @@
-﻿using DewCore.RestClient;
+﻿using DewCore.DewRestClient;
 using DewInterfaces.DewRestClient;
 using System;
 using System.Net.Http;
