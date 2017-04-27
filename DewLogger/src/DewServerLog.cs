@@ -38,7 +38,7 @@ namespace DewCore.DewLogger
             var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + text + @""" }"));
             request.AddContent(stringContent);
             RESTClient client = new RESTClient();
-            using (RESTResponse response = (RESTResponse)client.PerformRequest(request).Result)
+            using (RESTResponse response = (RESTResponse)client.PerformRequestAsync(request).Result)
             {
                 if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
                     throw new InvalidOperationException();
@@ -58,7 +58,7 @@ namespace DewCore.DewLogger
             var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + String.Format(text, args) + @""" }"));
             request.AddContent(stringContent);
             RESTClient client = new RESTClient();
-            using (RESTResponse response = (RESTResponse)client.PerformRequest(request).Result)
+            using (RESTResponse response = (RESTResponse)client.PerformRequestAsync(request).Result)
             {
                 if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
                     throw new InvalidOperationException();
@@ -77,7 +77,7 @@ namespace DewCore.DewLogger
             var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + text + @""" }"));
             request.AddContent(stringContent);
             RESTClient client = new RESTClient();
-            using (RESTResponse response = (RESTResponse)client.PerformRequest(request).Result)
+            using (RESTResponse response = (RESTResponse)client.PerformRequestAsync(request).Result)
             {
                 if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
                     throw new InvalidOperationException();
@@ -97,7 +97,7 @@ namespace DewCore.DewLogger
             var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + String.Format(text, args) + @""" }"));
             request.AddContent(stringContent);
             RESTClient client = new RESTClient();
-            using (RESTResponse response = (RESTResponse)client.PerformRequest(request).Result)
+            using (RESTResponse response = (RESTResponse)client.PerformRequestAsync(request).Result)
             {
                 if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
                     throw new InvalidOperationException();
@@ -116,7 +116,7 @@ namespace DewCore.DewLogger
             var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + text + @""" }"));
             request.AddContent(stringContent);
             RESTClient client = new RESTClient();
-            using (RESTResponse response = (RESTResponse)await client.PerformRequest(request))
+            using (RESTResponse response = (RESTResponse)await client.PerformRequestAsync(request))
             {
                 if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
                     throw new InvalidOperationException();
@@ -136,7 +136,7 @@ namespace DewCore.DewLogger
             var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + String.Format(text, args) + @""" }"));
             request.AddContent(stringContent);
             RESTClient client = new RESTClient();
-            using (RESTResponse response = (RESTResponse)await client.PerformRequest(request))
+            using (RESTResponse response = (RESTResponse)await client.PerformRequestAsync(request))
             {
                 if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
                     throw new InvalidOperationException();
@@ -155,7 +155,7 @@ namespace DewCore.DewLogger
             var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + text + @""" }"));
             request.AddContent(stringContent);
             RESTClient client = new RESTClient();
-            using (RESTResponse response = (RESTResponse)await client.PerformRequest(request))
+            using (RESTResponse response = (RESTResponse)await client.PerformRequestAsync(request))
             {
                 if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
                     throw new InvalidOperationException();
@@ -175,7 +175,7 @@ namespace DewCore.DewLogger
             var stringContent = new StringContent(Regex.Escape(@"{ ""text"":""" + String.Format(text, args) + @""" }"));
             request.AddContent(stringContent);
             RESTClient client = new RESTClient();
-            using (RESTResponse response = (RESTResponse)await client.PerformRequest(request))
+            using (RESTResponse response = (RESTResponse)await client.PerformRequestAsync(request))
             {
                 if (response.GetHttpStatusCodeType() == HttpStatusType.Error || response.GetHttpStatusCodeType() == HttpStatusType.Fault)
                     throw new InvalidOperationException();
