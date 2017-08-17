@@ -1,4 +1,4 @@
-﻿using DewInterfaces.DewLogger;
+﻿using DewLogger.Interfaces;
 using System;
 using System.Collections.Generic;
 
