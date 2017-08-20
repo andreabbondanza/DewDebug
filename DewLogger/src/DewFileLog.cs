@@ -1,13 +1,13 @@
-﻿using DewLogger.Interfaces;
+﻿using DewCore.Abstract.Logger;
 using System;
 using System.Collections.Generic;
 
-namespace DewCore.DewLogger
+namespace DewCore.Logger
 {
     /// <summary>
     /// Log into a file
     /// </summary>
-    public class DewFileLog : IDewLogger
+    public class DewFileLog : ILogger
     {
         /// <summary>
         /// Log file path

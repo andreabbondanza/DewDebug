@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DewLogger.Interfaces
+namespace DewCore.Abstract.Logger
 {
     /// <summary>
     /// Debug interface
     /// </summary>
-    public interface IDewLogger
+    public interface ILogger
     {
         /// <summary>
         /// Write in output the string

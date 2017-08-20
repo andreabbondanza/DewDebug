@@ -1,12 +1,12 @@
-﻿using DewLogger.Interfaces;
+﻿using DewCore.Abstract.Logger;
 using System;
 
-namespace DewCore.DewLogger
+namespace DewCore.Logger
 {
     /// <summary>
     /// Log into the console
     /// </summary>
-    public class DewConsole : IDewLogger
+    public class DewConsole : ILogger
     {
         /// <summary>
         /// Write text
